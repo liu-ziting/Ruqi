@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>消息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-transparent">
+			<h1 class="">消息</h1>
+		</header>
+		<div class="main">
+			<h1 class="toph1">消息</h1>
+			<ul id="noticelist">
+				<li>
+					<span class="twoimg">
+						<img src="../img/reply.jpg" />
+						<img src="../img/pllogo.png" />
+					</span>
+					<p>2小时前</p>
+					<h1>神出鬼没的后台君回复   超级马里奥可能再拍大...</h1>
+					<h2>我们不一样！我们不一样！</h2>
+					<div class="mui-clearfix"></div>
+				</li>
+				<li>
+					<span class="twoimg">
+						<img src="../img/reply.jpg" />
+						<img src="../img/pllogo2.png" />
+					</span>
+					<p>4小时前</p>
+					<h1>神出鬼没的后台君回复   日常里你有哪些人设崩...</h1>
+					<h2>你说的很有道理，但是我不听!</h2>
+					<div class="mui-clearfix"></div>
+				</li>
+				<li>
+					<span class="twoimg">
+						<img src="../img/reply.jpg" />
+						<img src="../img/pllogo3.png" />
+					</span>
+					<p>昨天</p>
+					<h1>神出鬼没的后台君回复   超级马里奥可能再拍大...</h1>
+					<h2>哈哈哈哈，这个6这个6。</h2>
+					<div class="mui-clearfix"></div>
+				</li>
+			</ul>
+		</div>
+	</body> 
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
+	<script src="../js/mui.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack:true //启用右滑关闭功能
+		});
+		//判断手势滑动事件
+		var srctop = 0,
+			thissrctop = 0;
+		$(window).scroll(function() {
+			//当滚动到距离顶部50像素时， 显示新头部
+			if($(this).scrollTop() >= 60) {
+				$("header h1").css({
+					"bottom": "0px",
+					'transition': 'all 0.5s',
+				})
+			} else {
+				$("header h1").css({
+					"bottom": "-50px",
+					'transition': 'all 0.3s',
+				})
+			}
+			//当滚动list时， img进行上下移动
+			var srctop = $(this).scrollTop();
+			if(thissrctop <= srctop) {
+				//下滚
+				$("#boxlist li").on('touchmove', function(e) {
+		
+				});
+			} else {
+				//上滚
+				$("#boxlist li").on('touchmove', function(e) {
+		
+				});
+			}
+			thissrctop = srctop;
+			return false;
+		});
+	</script>
+</html>

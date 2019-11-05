@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>发现</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/swiper.min.css" />
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/style.css" />
+		<style>
+			
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-transparent">
+			<h1 class="">发现</h1>
+		</header>
+		<div class="main">
+			<h1 class="toph1">发现</h1>
+			<div class="find">
+				<div class="search">
+					<label>
+						<img src="../img/sousuo.png"/>
+						<input type="text" placeholder="搜索你喜欢的文章" />
+					</label>
+				</div>
+				<div class="findbox">
+					<div class="swiper-container">
+						<div class="swiper-wrapper" id="findlist">
+							<div class="swiper-slide">
+								<img src="../img/img5.jpg" />
+								<span>知乎日报</span>
+								<h1>我也曾一边忙这剁手，一边为欠花呗几万而哭泣</h1>
+								<p>我看起来光鲜亮丽，没人知道我其实负债过万,我看起来光鲜亮丽，没人知道我其实负债过万</p>
+								<div class="tub">
+									<span><img src="../img/xx.png"/>10</span>
+									<span><img src="../img/fx.png"/>0</span>
+								</div>
+							</div>
+							
+							<div class="swiper-slide">
+								<img src="../img/img2.jpg" />
+								<span>世界药丸</span>
+								<h1>我也曾一边忙这剁手，一边为欠花呗几万而哭泣</h1>
+								<p>我看起来光鲜亮丽，没人知道我其实负债过万,我看起来光鲜亮丽，没人知道我其实负债过万</p>
+								<div class="tub">
+									<span><img src="../img/xx.png"/>110</span>
+									<span><img src="../img/fx.png"/>14</span>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<img src="../img/img3.jpg" />
+								<span>我有故事</span>
+								<h1>我也曾一边忙这剁手，一边为欠花呗几万而哭泣
+								</h1>
+								<p>我看起来光鲜亮丽，没人知道我其实负债过万,我看起来光鲜亮丽，没人知道我其实负债过万</p>
+								<div class="tub">
+									<span><img src="../img/xx.png"/>8</span>
+									<span><img src="../img/fx.png"/>1</span>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<img src="../img/img5.jpg" />
+								<span>知乎日报</span>
+								<h1>我也曾一边忙这剁手，一边为欠花呗几万而哭泣</h1>
+								<p>我看起来光鲜亮丽，没人知道我其实负债过万,我看起来光鲜亮丽，没人知道我其实负债过万</p>
+								<div class="tub">
+									<span><img src="../img/xx.png"/>10</span>
+									<span><img src="../img/fx.png"/>0</span>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<img src="../img/img2.jpg" />
+								<span>世界药丸</span>
+								<h1>我也曾一边忙这剁手，一边为欠花呗几万而哭泣</h1>
+								<p>我看起来光鲜亮丽，没人知道我其实负债过万,我看起来光鲜亮丽，没人知道我其实负债过万</p>
+								<div class="tub">
+									<span><img src="../img/xx.png"/>110</span>
+									<span><img src="../img/fx.png"/>14</span>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<img src="../img/img3.jpg" />
+								<span>我有故事</span>
+								<h1>我也曾一边忙这剁手，一边为欠花呗几万而哭泣
+								</h1>
+								<p>我看起来光鲜亮丽，没人知道我其实负债过万,我看起来光鲜亮丽，没人知道我其实负债过万</p>
+								<div class="tub">
+									<span><img src="../img/xx.png"/>8</span>
+									<span><img src="../img/fx.png"/>1</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/swiper.min.js"></script>
+	<script>
+		mui.init({
+			swipeBack: true //启用右滑关闭功能
+		});
+		var srctop = 0,
+			thissrctop = 0;
+		$(window).scroll(function() {
+			//当滚动到距离顶部50像素时， 显示新头部
+			if($(this).scrollTop() >= 60) {
+				$("header h1,#bars").css({
+					"bottom": "0px",
+					'transition': 'all 0.5s',
+				})
+			} else {
+				$("header h1,#bars").css({
+					"bottom": "-50px",
+					'transition': 'all 0.3s',
+				})
+			}
+			thissrctop = srctop;
+			return false;
+		});
+
+		var swiper = new Swiper('.swiper-container', {
+			slidesPerView: 'auto',
+			spaceBetween: 20,
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+		});
+		//打开新页面--文章详情
+		mui("#findlist").on('tap', '.swiper-slide', function() {
+			//获取id
+			var id = this.getAttribute("id");
+			//传值给详情页面，通知加载新数据
+			//mui.fire(detail,'getDetail',{id:id});
+			//打开新闻详情
+			mui.openWindow({
+				id: 'detail',
+				url: 'listdetails.html',
+				extras: {
+					//自定义扩展参数，可以用来处理页面间传值
+				},
+				createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+				show: {
+					autoShow: true, //页面loaded事件发生后自动显示，默认为true
+					aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
+					duration: '200' //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...', //等待对话框上显示的提示内容
+				}
+		
+			})
+		})
+  
+  
+	</script>
+
+</html>

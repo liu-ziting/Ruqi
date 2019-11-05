@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<style>
+			.mui-content{
+				background-color: #F9F9F9;
+				height: 100%;
+			}
+			.lastli:after {
+				position: absolute !important;
+				right: 0 !important;
+				bottom: 0 !important;
+				left: 15px !important;
+				height: 1px !important;
+				content: '' !important;
+				-webkit-transform: scaleY(.5) !important;
+				transform: scaleY(.5) !important;
+				background-color: #c8c7cc !important;
+			}
+		</style>
+	</head>
+
+	<body id="modifywode">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back" href="javascript:;"><img class="leftimg" src="../img/leftj.png" /></a>
+			<h1 class="mui-title">个人信息</h1>
+			<a id="setup" class="mui-icon mui-icon-gear mui-right" ></a>
+		</header>
+		<div class="main mui-content">
+			<div class="main-top">
+				<img src="../img/tx.png" />
+				<div class="gender">
+					<span class="active"><i class="mui-icon icon-ttpodicon"></i>男</span>
+					<span><i class="mui-icon icon-nv"></i>女</span>
+				</div>
+			</div>
+			<div class="mui-clearfix"></div>
+			<ul >
+			    <li class="mui-table-view-cell">昵称<input type="text" placeholder="很酷很酷的设计师"/></li>
+			    <li class="mui-table-view-cell lastli">个人签名<input type="text" placeholder="请输入个人签名"/></li>
+			</ul>
+			<!--<button type="button" class="mui-btn mui-btn-outlined">保存</button>-->
+			<div class="mui-clearfix"></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
+	<script src="../js/mui.min.js"></script>
+	<script>
+		$(".gender span").click(function(){
+			$(this).addClass("active").siblings().removeClass("active")
+		})
+		//打开新页面--设置
+		$("#setup").click(function(){
+			//获取id
+			var id = this.getAttribute("id");
+			//传值给详情页面，通知加载新数据
+			//mui.fire(detail,'getDetail',{id:id});
+			//打开新闻详情
+			mui.openWindow({
+				id: 'setup',
+				url: 'setup.html',
+				extras: {
+					//自定义扩展参数，可以用来处理页面间传值
+				},
+				createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+				show: {
+					autoShow: true, //页面loaded事件发生后自动显示，默认为true
+					aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
+					duration: '200' //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+				},
+				waiting: {
+					autoShow: true, //自动显示等待框，默认为true
+					title: '正在加载...', //等待对话框上显示的提示内容
+				}
+		
+			})
+		})
+	</script>
+</html>

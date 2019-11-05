@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>注册</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<style>
+			.mui-content{
+				background-color: #F9F9F9;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body id="segister">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back" href="javascript:;"><img class="leftimg" src="../img/leftj.png" /></a>
+			<h1 class="mui-title"></h1>
+		</header>
+		<div class="content">
+			<h1>注册</h1>
+			<ul>
+				<li>
+					<label><p>用户名</p><input id="loginName" type="tel" placeholder="请输入用户名"/></label>
+				</li>
+				<!--<li>
+					<label><p>验证码</p><a>获取验证码</a><i>|</i><input class="yzm" type="tel" placeholder="输入验证码"/></label>
+				</li>-->
+				<li>
+					<label><p>设置密码</p><input id="loginPwd" type="password" placeholder="请输入密码"/></label>
+				</li>
+				<li>
+					<label><p>确认密码</p><input id="qrloginPwd" type="password" placeholder="请输入密码"/></label>
+				</li>
+			</ul>
+			<button id="submit" type="button">注册</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
+	<script src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="../js/basic.js" ></script>
+	<script>
+		//用户注册接口请求
+		$("#submit").click(function(){
+			var loginName = $("#loginName").val();
+			var loginPwd = $("#loginPwd").val();
+			var qrloginPwd = $("#qrloginPwd").val();
+			if(!loginName){
+				mui.toast("请输入用户名！")
+			}else if(!loginPwd){
+				mui.toast("请输入密码！")
+			}else if(loginPwd == qrloginPwd){
+				register(loginName,loginPwd);
+			}else{
+				mui.toast("两次密码不一致！")
+			}
+		})
+		function register(loginName,loginPwd){
+			mui.ajax(getUrl()+'user/register', {
+				data: {
+					loginName:loginName,
+					loginPwd:loginPwd
+				},
+				dataType: 'json', //服务器返回json格式数据
+				type: 'post', //HTTP请求类型
+				timeout: 10000, //超时时间设置为10秒；
+				success: function(result) {
+					if(result.code == 0){
+						mui.alert("注册成功！",function(){
+							mui.openWindow({
+								url: '../index.html',
+								extras: {
+									//自定义扩展参数，可以用来处理页面间传值
+								},
+								createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+								show: {
+									autoShow: true, //页面loaded事件发生后自动显示，默认为true
+									aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
+									duration: '200' //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+								},
+								waiting: {
+									autoShow: true, //自动显示等待框，默认为true
+									title: '正在加载...', //等待对话框上显示的提示内容
+								}
+							})
+						});
+						
+					}else{
+						mui.alert(result.msg)
+					}
+				},
+			});
+		}
+	</script>
+</html>

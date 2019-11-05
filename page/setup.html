@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>设置</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/iconfont.css" />
+		<style>
+			.mui-content{
+				background-color: #F9F9F9;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body id="setup">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back" href="javascript:;"><img class="leftimg" src="../img/leftj.png" /></a>
+			<h1 class="mui-title">设置中心</h1>
+		</header>
+		<div class="content">
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell">
+			        <a id="modifypassword" class="mui-navigate-right">修改密码</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a class="mui-navigate-right">推送通知</a>
+			        <div class="mui-switch mui-switch-mini">
+					  <div class="mui-switch-handle"></div>
+					</div>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a class="mui-navigate-right">反馈建议</a>
+			    </li>
+			    <li class="mui-table-view-cell">
+			        <a href="../login.html" class="mui-navigate-right">退出登录</a>
+			    </li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
+	<script src="../js/mui.min.js"></script>
+	<script>
+		//点击注册
+			$("#modifypassword").click(function(){
+				mui.openWindow({
+					url: 'modifypassword.html',
+					extras: {
+						//自定义扩展参数，可以用来处理页面间传值
+					},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
+						duration: '200' //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...', //等待对话框上显示的提示内容
+					}
+			
+				})
+			})
+	</script>
+</html>

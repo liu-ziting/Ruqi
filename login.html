@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" href="css/iconfont.css" />
+		<link rel="stylesheet" href="css/login.css" />
+	</head>
+	<body id="login">
+		   <div class="header">
+				<img class="logobg" src="img/bglogin.png" />
+				<img class="logoimg" src="img/login.png" />
+			</div>
+			<section>
+				<label>
+					<p>账号</p>
+					<input id="name" type="tel" placeholder="请输入用户名" />
+				</label>
+				<label>
+					<p>密码</p>
+					<input id="password" type="password" placeholder="请输入密码" />
+				</label>
+				<button id="loginBut" type="button">登录</button>
+				<div>
+					<a class="register">注册</a>
+					<a class="forgetpass">忘记密码</a>
+				</div>
+			</section> 
+			<div class="mui-clearfix"></div>
+			<fieldset>
+    			<legend>第三方账号登录</legend>
+ 			 </fieldset>
+ 			 <footer>
+ 			 	<ul>
+ 			 		<li><img src="img/weixin.png"/></li>
+ 			 		<li><img src="img/QQ.png"/></li>
+ 			 	</ul>
+ 			 </footer>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/basic.js" ></script>
+		<script type="text/javascript" charset="utf-8">
+			//mui初始化
+			mui.init();
+			//点击登录
+			$("#loginBut").click(function(){
+				var name = $("#name").val();
+				var password = $("#password").val();
+				if(!name){
+					mui.toast("请输入用户名！")
+				}else if(!password){
+					mui.toast("请输入密码！")
+				}else{
+					
+					mui.ajax(getUrl()+'user/login', {
+						data: {
+							loginName:name,
+							loginPwd:password
+						},
+						dataType: 'json', //服务器返回json格式数据
+						type: 'post', //HTTP请求类型
+						timeout: 10000, //超时时间设置为10秒；
+						success: function(result) {
+							if(result.code == 0){
+								var Authorization = result.data;
+								localStorage.setItem("Authorization",Authorization)
+
+								mui.openWindow({
+									url: 'index.html',
+									extras: {
+										//自定义扩展参数，可以用来处理页面间传值
+									},
+									createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+									show: {
+										autoShow: true, //页面loaded事件发生后自动显示，默认为true
+										aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
+										duration: '200' //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+									},
+									waiting: {
+										autoShow: true, //自动显示等待框，默认为true
+										title: '正在加载...', //等待对话框上显示的提示内容
+									}
+								})
+							}else{
+								mui.alert(result.msg)
+							}
+						},
+					});
+			
+				}
+				
+			})
+			
+			//点击注册
+			$(".register").click(function(){
+				mui.openWindow({
+					url: 'page/segister.html',
+					extras: {
+						//自定义扩展参数，可以用来处理页面间传值
+					},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
+						duration: '200' //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...', //等待对话框上显示的提示内容
+					}
+			
+				})
+			})
+			//点击忘记密码
+			$(".forgetpass").click(function(){
+				mui.openWindow({
+					url: 'page/forgetpassword.html',
+					extras: {
+						//自定义扩展参数，可以用来处理页面间传值
+					},
+					createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+					show: {
+						autoShow: true, //页面loaded事件发生后自动显示，默认为true
+						aniShow: 'slide-in-right', //页面显示动画，默认为”slide-in-right“；
+						duration: '200' //页面动画持续时间，Android平台默认100毫秒，iOS平台默认200毫秒；
+					},
+					waiting: {
+						autoShow: true, //自动显示等待框，默认为true
+						title: '正在加载...', //等待对话框上显示的提示内容
+					}
+			
+				})
+			})
+		</script>
+	</body>
+
+</html>

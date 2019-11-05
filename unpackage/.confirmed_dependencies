@@ -1,0 +1,251 @@
+{
+	"page/main.html": {
+		"resources": [
+			"img/img7.jpg",
+			"js/main.js",
+			"img/listimg.jpg",
+			"fonts/mui.ttf",
+			"css/style.css",
+			"img/img8.jpg",
+			"img/fx.png",
+			"img/img5.jpg",
+			"img/xx.png",
+			"js/mui.min.js",
+			"img/img2.jpg",
+			"css/mui.min.css",
+			"img/img6.jpg",
+			"js/jquery-3.2.1.min.js"
+		],
+		"refer": [
+			"page/wode.html",
+			"page/listdetails.html",
+			"page/find.html"
+		]
+	},
+	"index.html": {
+		"resources": [
+			"page/main.html",
+			"fonts/iconfont4.ttf",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"css/style.css",
+			"fonts/iconfont.ttf",
+			"js/jquery-3.2.1.min.js",
+			"fonts/iconfont2.ttf",
+			"fonts/iconfont3.ttf",
+			"fonts/iconfont5.ttf",
+			"fonts/iconfont6.ttf",
+			"page/notice.html"
+		],
+		"refer": [
+			"page/main.html",
+			"page/wode.html",
+			"page/find.html",
+			"page/notice.html"
+		]
+	},
+	"page/wode.html": {
+		"resources": [
+			"js/wode.js",
+			"css/style.css",
+			"js/jquery-3.2.1.min.js",
+			"img/tx.png",
+			"js/mui.min.js",
+			"img/img2.jpg",
+			"css/mui.min.css",
+			"img/img8.jpg",
+			"img/img5.jpg",
+			"img/img3.jpg",
+			"page/modifywode.html"
+		],
+		"refer": [
+			"page/modifywode.html"
+		]
+	},
+	"page/listdetails.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"img/img6.jpg",
+			"css/style.css",
+			"img/mainimg.png",
+			"img/leftj.png",
+			"img/mfx.png",
+			"img/sc.png",
+			"js/jquery-3.2.1.min.js",
+			"page/messagelist.html",
+			"img/pllogo3.png",
+			"img/reply.jpg",
+			"img/pllogo2.png",
+			"img/pllogo.png"
+		],
+		"refer": [
+			"page/main.html",
+			"page/messagelist.html"
+		]
+	},
+	"page/find.html": {
+		"resources": [
+			"img/sousuo.png",
+			"css/swiper.min.css",
+			"js/swiper.min.js",
+			"img/img3.jpg",
+			"js/mui.min.js",
+			"img/img2.jpg",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/jquery-3.2.1.min.js",
+			"img/fx.png",
+			"img/img5.jpg",
+			"img/xx.png",
+			"page/listdetails.html"
+		],
+		"refer": [
+			"page/listdetails.html"
+		]
+	},
+	"page/notice.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/jquery-3.2.1.min.js",
+			"fonts/mui.ttf",
+			"img/pllogo.png",
+			"img/reply.jpg",
+			"img/pllogo3.png",
+			"img/pllogo2.png"
+		]
+	},
+	"page/modifywode.html": {
+		"resources": [
+			"js/wode.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/jquery-3.2.1.min.js",
+			"fonts/mui.ttf",
+			"img/leftj.png",
+			"img/tx.png",
+			"css/iconfont.css",
+			"fonts/iconfont5.ttf",
+			"fonts/iconfont4.ttf",
+			"fonts/iconfont6.ttf",
+			"fonts/iconfont.ttf",
+			"fonts/iconfont2.ttf",
+			"fonts/iconfont3.ttf"
+		],
+		"refer": [
+			"page/setup.html"
+		]
+	},
+	"page/messagelist.html": {
+		"resources": [
+			"page/listdetails.html",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/jquery-3.2.1.min.js",
+			"img/leftj.png",
+			"img/img4.jpg",
+			"img/tx.png",
+			"img/img2.jpg",
+			"img/pllogo.png",
+			"img/pllogo2.png",
+			"page/reply.png",
+			"img/reply.jpg",
+			"img/pllogo3.png"
+		],
+		"refer": [
+			"page/listdetails.html"
+		]
+	},
+	"page/setup.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/jquery-3.2.1.min.js",
+			"img/leftj.png",
+			"fonts/iconfont4.ttf",
+			"fonts/iconfont6.ttf",
+			"fonts/iconfont2.ttf",
+			"fonts/iconfont5.ttf",
+			"fonts/iconfont3.ttf",
+			"fonts/iconfont.ttf",
+			"fonts/mui.ttf",
+			"login.html"
+		],
+		"refer": [
+			"login.html",
+			"page/modifypassword.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"img/bglogin.png",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"css/style.css",
+			"js/jquery-3.2.1.min.js",
+			"img/login.png",
+			"img/QQ.png",
+			"img/weixin.png",
+			"css/login.css",
+			"index.html",
+			"fonts/iconfont4.ttf",
+			"fonts/iconfont6.ttf",
+			"fonts/iconfont2.ttf",
+			"fonts/iconfont3.ttf",
+			"fonts/iconfont.ttf",
+			"fonts/iconfont5.ttf",
+			"page/setup.html"
+		],
+		"refer": [
+			"index.html",
+			"page/segister.html",
+			"page/forgetpassword.html",
+			"page/setup.html"
+		]
+	},
+	"page/segister.html": {
+		"resources": [
+			"img/leftj.png",
+			"css/style.css",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"js/jquery-3.2.1.min.js",
+			"fonts/iconfont4.ttf",
+			"fonts/iconfont6.ttf",
+			"fonts/iconfont.ttf",
+			"fonts/iconfont2.ttf",
+			"fonts/iconfont5.ttf",
+			"fonts/iconfont3.ttf"
+		]
+	},
+	"page/forgetpassword.html": {
+		"resources": [
+			"img/leftj.png",
+			"css/style.css",
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"js/jquery-3.2.1.min.js"
+		]
+	},
+	"page/modifypassword.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/iconfont.css",
+			"css/mui.min.css",
+			"img/leftj.png",
+			"css/style.css",
+			"js/jquery-3.2.1.min.js"
+		]
+	}
+}

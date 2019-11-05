@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>文章详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/style.css" />
+	</head>
+
+	<body>
+		<div id="detail">
+			<div class="top">
+				<img class="topimg" src="../img/mainimg.png" />
+			</div>
+			<div class="main">
+				<h1>超级马里奥可能再拍大电影，制作方想请宫本茂站台</h1>
+				<p class="lei">#<span>知乎日报</span><time>1小时前</time></p>
+				<div class="content">
+					<p>游戏改编成的电影也许会迎来重量级的形象，诞生 32 年的超级马里奥。</p>
+					<p>《华尔街日报》援引信源消息称，环球影业旗下的动画工作室照明娱乐（Illumination Entertainment）在跟任天堂协商拍摄，计划以马里奥兄弟为题材的动画电影。两家公司来回沟通已经超过 1 年，目前还没有确定拍摄计划。</p>
+					<p>在双方协商过程中，有一点被任天堂看重，他们希望可以在创意环节有更多的参与。按照信源的说法，马里奥之父宫本茂也参与了协商，很可能跟照明娱乐的 CEO Chris Meledandri 一起担任制片人。</p>
+					<p>在双方协商过程中，有一点被任天堂看重，他们希望可以在创意环节有更多的参与。按照信源的说法，马里奥之父宫本茂也参与了协商，很可能跟照明娱乐的 CEO Chris Meledandri 一起担任制片人。</p>
+				</div>
+				<div class="commentlist">
+					<h2>评论列表</h2>
+					<div class="meslist">
+						<ul>
+							<li>
+								<img class="leftimg" src="../img/pllogo.png" />
+								<p>有些长留于心中<span>2017.12.02 13:56</span></p>
+								<h1>看到标题，我以为是科普地理的</h1>
+								<div class="mui-clearfix"></div>
+							</li>
+							<li>
+								<img class="leftimg" src="../img/pllogo2.png" />
+								<p>MR.Huaji<span>2017.12.02 13:56</span></p>
+								<h1>天佑天朝</h1>
+								<div class="mui-clearfix"></div>
+							</li>
+							<li>
+								<img class="leftimg" src="../img/pllogo3.png" />
+								<p>燃烧的废柴<span>2017.12.02 13:56</span></p>
+								<h1>实在编不出来什么评论了，但是还非要有一个两行的，咦，居然这么快就两行了。</h1>
+								<div class="mui-clearfix"></div>
+							</li>
+						</ul>
+						<a id="jumplist"  href="javascript:;" class="more">查看更多></a>
+					</div>
+				</div>
+			</div>
+			
+			<footer>
+				<a class="mui-action-back" href="javascript:;"><img class="leftimg" src="../img/leftj.png" /></a>
+				<input id="comment" type="text" placeholder="有什么想说就说吧..." readonly="readonly" />
+				<div>
+					<span>
+						<img src="../img/mfx.png" />
+						<i>18</i>
+					</span>
+					<span>
+						<img src="../img/sc.png" />
+						<i>158</i>
+					</span>
+				</div>
+			</footer>
+			<!--评论弹窗-->
+			<div class="popup"></div> 
+			<div class="commentPopup">
+				<textarea rows="5" placeholder="想说什么你就说吧..."></textarea>
+				<div class="popupbuttom">
+					<span>0/120</span>
+					<button id="submit" type="button" class="mui-btn">发送</button>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js" ></script>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			/**
+			 * 预加载首页具体业务实现
+			 */
+			mui.plusReady(function() {
+				mui.preload({
+					url: 'main.html',
+					id: 'mainlist',
+					waiting: {
+						autoShow: 'true', //自动显示等待框，默认为true
+						title: '正在加载...', //等待对话框上显示的提示内容
+					}
+				});
+			});
+			
+			//判断手势滑动事件
+			var srctop = 0,
+				thissrctop = 0;
+			$(window).scroll(function() {
+				var srctop = $(this).scrollTop();
+				//当滚动到距离顶部50像素时， 显示新头部
+				if($(this).scrollTop() >= 60) {
+					$("footer").css({
+						"height": "50px",
+						'transition': 'all 0.5s',
+					})
+				} else {
+					$("footer").css({
+						"height": "0",
+						'transition': 'all 0.5s',
+					})
+				}
+				//当滚动屏幕的时候，topimg进行上下移动
+				if(thissrctop <= srctop) {
+					//下滚
+					$(".topimg").css("transform","scale(1.1)");
+					$(".main").css("border-radius","0px");
+					
+				} else {
+					//上滚
+					$(".topimg").css("transform","scale(1.0)");
+					$(".main").css("border-radius","12px");
+				}
+				thissrctop = srctop;
+				return false;
+			});
+			
+			
+			//打开新页面--评论列表
+			$("#jumplist").click(function(){
+				//获取id
+				var id = this.getAttribute("id");
+				mui.openWindow({
+					id: 'messagelist',
+					url: 'messagelist.html',
+					extras: {
+						
+					},
+					createNew: false, 
+					show: {
+						autoShow: true, 
+						aniShow: 'slide-in-right', 
+						duration: '200' 
+					},
+					waiting: {
+						autoShow: true, 
+						title: '正在加载...',
+					}
+				})
+			})
+				
+			//点击评论
+			$("#comment").click(function(){
+				$(".popup").fadeIn();
+				$(".commentPopup").css({
+					'transition': 'all 0.5s',
+					'height': '200px',
+				})
+				
+			});
+			$(".popup").click(function(){
+				$(".popup").fadeOut();
+				$(".commentPopup").css({
+					'transition': 'all 0.5s',
+					'height': '0px',
+				})
+			})
+			$("#submit").click(function(){
+				mui.toast('提交成功！',{ duration:'long', type:'div' });
+				$(".popup").fadeOut();
+				$(".commentPopup").css({
+					'transition': 'all 0.5s',
+					'height': '0px',
+				})
+			})
+		</script>
+	</body>
+
+</html>

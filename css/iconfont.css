@@ -1,0 +1,57 @@
+@font-face {font-family: "Muiicons";
+    font-weight: normal;
+    font-style: normal;
+        src:url('../fonts/iconfont.ttf') format('truetype');
+}
+@font-face {font-family: "Muiicons";
+    font-weight: normal;
+    font-style: normal;
+        src:url('../fonts/iconfont2.ttf') format('truetype');
+}
+@font-face {font-family: "Muiicons";
+    font-weight: normal;
+    font-style: normal;
+        src:url('../fonts/iconfont3.ttf') format('truetype');
+}
+@font-face {font-family: "Muiicons";
+    font-weight: normal;
+    font-style: normal;
+        src:url('../fonts/iconfont4.ttf') format('truetype');
+}
+@font-face {font-family: "Muiicons";
+    font-weight: normal;
+    font-style: normal;
+        src:url('../fonts/iconfont5.ttf') format('truetype');
+}
+@font-face {font-family: "Muiicons";
+    font-weight: normal;
+    font-style: normal;
+        src:url('../fonts/iconfont6.ttf') format('truetype');
+}
+.mui-icon{
+    font-family: Muiicons;
+    font-size: 24px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+
+}
+.icon-faxian{
+	margin-top: 0px;
+}
+.icon-xiaoxi{
+	margin-top: -4px;
+}
+.icon-wode{
+	margin-top: -2px;
+}
+.icon-main:before { content: "\e503";font-size: 26px;}
+.icon-faxian:before { content: "\e507"; font-size: 22px;font-weight: 600;}
+.icon-xiaoxi:before { content: "\e631"; font-size: 24px;}
+.icon-wode:before { content: "\e664"; font-size: 22px;font-weight: 600;}
+
+.icon-ttpodicon:before { content: "\e67e";font-size: 18px; }
+.icon-nv:before { content: "\e673";font-size: 18px;}

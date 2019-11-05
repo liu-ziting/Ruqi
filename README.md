@@ -43,9 +43,9 @@ UE：https://modao.cc/app/zpHXDuAdqiKS5aQvvEWXjieNUDssFWG
 ```
 Ruqi:
 │  .project
-│  index.html		框架主体
-│  login.html		登录页面
-│  manifest.json	配置文件
+│  index.html			框架主体
+│  login.html			登录页面
+│  manifest.json		配置文件
 │  README.md
 ├─css				css存放目录
 │      iconfont.css
@@ -68,18 +68,18 @@ Ruqi:
 │      
 ├─page
 │      find.html		发现页面
-│      forgetpassword.html		忘记密码页面
+│      forgetpassword.html	忘记密码页面
 │      listdetails.html		文章详情页面
 │      main.html		主页
 │      messagelist.html		留言列表页面
-│      modifypassword.html		修改密码页面
+│      modifypassword.html	修改密码页面
 │      modifywode.html		个人信息页面
 │      notice.html		消息页面
 │      segister.html		用户注册页面
 │      setup.html		设置页面
 │      wode.html		我的页面
 │      
-└─unpackage				打包过后生成目录
+└─unpackage			打包过后生成目录
                 
 ```		
 

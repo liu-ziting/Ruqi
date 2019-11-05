@@ -1,0 +1,107 @@
+卷 软件 的文件夹 PATH 列表
+卷序列号为 989F-3E0D
+F:.
+│  .project
+│  contents.txt
+│  file.txt
+│  index.html
+│  login.html
+│  manifest.json
+│  README.md
+│  
+├─css
+│      iconfont.css
+│      login.css
+│      mui.css
+│      mui.min.css
+│      style.css
+│      swiper.min.css
+│      
+├─fonts
+│      iconfont.ttf
+│      iconfont2.ttf
+│      iconfont3.ttf
+│      iconfont4.ttf
+│      iconfont5.ttf
+│      iconfont6.ttf
+│      mui.ttf
+│      
+├─img
+│      bglogin.png
+│      fx.png
+│      img2.jpg
+│      img3.jpg
+│      img4.jpg
+│      img5.jpg
+│      img6.jpg
+│      img7.jpg
+│      img8.jpg
+│      leftj.png
+│      listimg.jpg
+│      login.png
+│      mainimg.png
+│      mfx.png
+│      pllogo.png
+│      pllogo2.png
+│      pllogo3.png
+│      QQ.png
+│      reply.jpg
+│      sc.png
+│      sousuo.png
+│      tx.png
+│      weixin.png
+│      xx.png
+│      
+├─js
+│      basic.js
+│      jquery-3.2.1.min.js
+│      main.js
+│      mui.js
+│      mui.min.js
+│      swiper.min.js
+│      wode.js
+│      
+├─page
+│      find.html
+│      forgetpassword.html
+│      listdetails.html
+│      main.html
+│      messagelist.html
+│      modifypassword.html
+│      modifywode.html
+│      notice.html
+│      segister.html
+│      setup.html
+│      wode.html
+│      
+└─unpackage
+    │  .confirmed_dependencies
+    │  .dependencies
+    │  
+    ├─release
+    │      H500C7700_0829142350.apk
+    │      H500C7700_1208104416.apk
+    │      H500C7700_1208104738.ipa
+    │      H500C7700_1226200720.apk
+    │      RuQI.ipa
+    │      
+    └─res
+        └─icons
+                100x100.png
+                114x114.png
+                120x120.png
+                144x144.png
+                152x152.png
+                180x180.png
+                29x29.png
+                40x40.png
+                48x48.png
+                50x50.png
+                57x57.png
+                58x58.png
+                72x72.png
+                76x76.png
+                80x80.png
+                87x87.png
+                96x96.png
+                
